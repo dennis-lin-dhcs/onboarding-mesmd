@@ -6,7 +6,7 @@ export default function ContactPage() {
       <Stack spacing={1}>
         <Typography variant="h4">Contact</Typography>
         <Typography color="text.secondary">
-          Replace this placeholder with your own content or form component.
+          Contact page.
         </Typography>
       </Stack>
     </Paper>

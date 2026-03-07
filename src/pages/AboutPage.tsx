@@ -6,7 +6,7 @@ export default function AboutPage() {
       <Stack spacing={1}>
         <Typography variant="h4">About</Typography>
         <Typography color="text.secondary">
-          The navigation lives in one file, routes live in one file, and the content renders through Outlet.
+          About page.
         </Typography>
       </Stack>
     </Paper>
