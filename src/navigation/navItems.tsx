@@ -13,4 +13,5 @@ export const navItems: NavItem[] = [
   { label: 'Home', to: '/', icon: <HomeIcon /> },
   { label: 'About', to: '/about', icon: <InfoIcon /> },
   { label: 'Contact', to: '/contact', icon: <MailIcon /> },
+  { label: 'IP-LNA', to: '/ip-lna', icon: <MailIcon /> },
 ]
