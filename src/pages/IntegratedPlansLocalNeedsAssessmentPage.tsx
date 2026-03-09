@@ -29,7 +29,7 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
           </Table>
         </Paper>
         <Paper>
-          <Typography variant="h6">Projects and Credentials</Typography>
+          <Typography variant="h6">Project Setup</Typography>
           <Table sx={{"& td, & th": { border: 0 }}}>
             <TableBody sx={{ border: "none" }}>
               <TableRow>
@@ -39,7 +39,7 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
               </TableRow>
               <TableRow>
                 <TableCell>
-                  <li>Copy the secrets located at the Vault location into an "appsettings.Development.json" file</li>
+                  <li>Copy the secrets located at the Vault location into an <Typography component="span" sx={{ fontFamily: "monospace", backgroundColor: "lightgray" }}>appsettings.Development.json</Typography> file</li>
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -58,6 +58,7 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
                     <TableCell>GitHub Project</TableCell>
                     <TableCell>Vault Credentials (App-Dev)</TableCell>
                     <TableCell>Launch Profile</TableCell>
+                    <TableCell>Dependent Systems</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -69,7 +70,8 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
                     <TableCell>
                       <Link href="https://vault-dev.mesmd.teleport.sh/ui/vault/secrets/secret/kv/xenon%2Fappsettings-development%2Fbht-ip-int-api/details?namespace=admin%2Ftenant%2Fbht&version=12">Vault Location</Link>
                     </TableCell>
-                    <TableCell>http</TableCell>
+                    <TableCell><Typography component="span" sx={{ fontFamily: "monospace", backgroundColor: "lightgray" }}>http</Typography></TableCell>
+                    <TableCell>None</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>BHT Integrated Plan (IP) Service API</TableCell>
@@ -79,7 +81,8 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
                     <TableCell>
                       <Link href="https://vault-dev.mesmd.teleport.sh/ui/vault/secrets/secret/kv/xenon%2Fappsettings-development%2Fbht-ip-svc-api/details?namespace=admin%2Ftenant%2Fbht&version=4">Vault Location</Link>
                     </TableCell>
-                    <TableCell>http</TableCell>
+                    <TableCell><Typography component="span" sx={{ fontFamily: "monospace", backgroundColor: "lightgray" }}>http</Typography></TableCell>
+                    <TableCell>Postgres</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>BHT Integrated Plans UI</TableCell>
@@ -89,7 +92,8 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
                     <TableCell>
                       <Link href="https://vault-dev.mesmd.teleport.sh/ui/vault/secrets/secret/kv/xenon%2Fappsettings-development%2Fbht-ip-ui/details?namespace=admin%2Ftenant%2Fbht&version=9">Vault Location</Link>
                     </TableCell>
-                    <TableCell>https</TableCell>
+                    <TableCell><Typography component="span" sx={{ fontFamily: "monospace", backgroundColor: "lightgray" }}>https</Typography></TableCell>
+                    <TableCell>Redis</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>BHT Shared Workflow Service API</TableCell>
@@ -99,7 +103,8 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
                     <TableCell>
                       <Link href="https://vault-dev.mesmd.teleport.sh/ui/vault/secrets/secret/kv/xenon%2Fappsettings-development%2Fbht-shared-workflow-svc-api?namespace=admin%2Ftenant%2Fbht">Vault Location</Link>
                     </TableCell>
-                    <TableCell>http</TableCell>
+                    <TableCell><Typography component="span" sx={{ fontFamily: "monospace", backgroundColor: "lightgray" }}>http</Typography></TableCell>
+                    <TableCell>None</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>DHCS AI Integration API</TableCell>
@@ -108,16 +113,13 @@ export default function IntegratedPlansLocalNeedsAssessmentPage() {
                     </TableCell>
                     <TableCell>None</TableCell>
                     <TableCell>None</TableCell>
+                    <TableCell>None</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
             </TableContainer>
-          <Link href="https://dhcs-mesmd.atlassian.net/wiki/spaces/BHT/pages/2489679947/County+Portal+Integrated+Plan+IP+Azure+SSO+Integration#Test-Accounts">Test Accounts</Link>
+            <Link href="https://dhcs-mesmd.atlassian.net/wiki/spaces/BHT/pages/2489679947/County+Portal+Integrated+Plan+IP+Azure+SSO+Integration#Test-Accounts">Test Accounts</Link>
           </Typography>
-        </Paper>
-        <Paper>
-          <Typography variant="h6">Local Database Setup</Typography>
-          In the
         </Paper>
       </Stack>
     </Paper>
