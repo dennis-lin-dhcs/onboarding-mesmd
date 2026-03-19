@@ -2,6 +2,7 @@ import * as React from 'react'
 import {
   AppBar,
   Box,
+  Collapse,
   Divider,
   Drawer,
   IconButton,
@@ -13,17 +14,112 @@ import {
   Typography,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import ExpandLessIcon from '@mui/icons-material/ExpandLess'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { navItems } from '../navigation/navItems'
+import { navItems, type NavItem } from '../navigation/navItems'
 
-const drawerWidth = 260
+const drawerWidth = 280
+
+type OpenSectionState = Record<string, boolean>
+
+function hasActiveChild(item: NavItem, pathname: string): boolean {
+  if (item.to === pathname) {
+    return true
+  }
+
+  return item.children?.some((child) => hasActiveChild(child, pathname)) ?? false
+}
 
 export default function AppLayout() {
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const location = useLocation()
 
+  const [openSections, setOpenSections] = React.useState<OpenSectionState>(() => {
+    const initialState: OpenSectionState = {}
+
+    navItems.forEach((item) => {
+      if (item.children?.length) {
+        initialState[item.label] = hasActiveChild(item, location.pathname)
+      }
+    })
+
+    return initialState
+  })
+
+  React.useEffect(() => {
+    setOpenSections((current) => {
+      const nextState = { ...current }
+
+      navItems.forEach((item) => {
+        if (item.children?.length && hasActiveChild(item, location.pathname)) {
+          nextState[item.label] = true
+        }
+      })
+
+      return nextState
+    })
+  }, [location.pathname])
+
   const handleDrawerToggle = () => {
     setMobileOpen((open) => !open)
+  }
+
+  const handleSectionToggle = (label: string) => {
+    setOpenSections((current) => ({
+      ...current,
+      [label]: !current[label],
+    }))
+  }
+
+  const handleLeafClick = () => {
+    setMobileOpen(false)
+  }
+
+  const renderNavItem = (item: NavItem, level = 0) => {
+    const isExpandable = Boolean(item.children?.length)
+    const isOpen = openSections[item.label] ?? false
+    const isSelected = item.to === location.pathname
+    const isParentSelected = !item.to && hasActiveChild(item, location.pathname)
+
+    const commonSx = {
+      mb: 0.5,
+      mx: 1,
+      borderRadius: 2,
+      pl: level === 0 ? 2 : 5,
+      pr: 2,
+    }
+
+    return (
+      <React.Fragment key={`${level}-${item.label}`}>
+        <ListItemButton
+          component={item.to ? Link : 'button'}
+          to={item.to}
+          onClick={() => {
+            if (isExpandable) {
+              handleSectionToggle(item.label)
+              return
+            }
+
+            handleLeafClick()
+          }}
+          selected={isSelected || isParentSelected}
+          sx={commonSx}
+        >
+          <ListItemIcon sx={{ minWidth: 36 }}>{item.icon}</ListItemIcon>
+          <ListItemText primary={item.label} />
+          {isExpandable ? (isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />) : null}
+        </ListItemButton>
+
+        {isExpandable ? (
+          <Collapse in={isOpen} timeout="auto" unmountOnExit>
+            <List disablePadding>
+              {item.children?.map((child) => renderNavItem(child, level + 1))}
+            </List>
+          </Collapse>
+        ) : null}
+      </React.Fragment>
+    )
   }
 
   const drawer = (
@@ -34,21 +130,7 @@ export default function AppLayout() {
         </Typography>
       </Toolbar>
       <Divider />
-      <List sx={{ px: 1, py: 1 }}>
-        {navItems.map((item) => (
-          <ListItemButton
-            key={item.to}
-            component={Link}
-            to={item.to}
-            selected={location.pathname === item.to}
-            onClick={() => setMobileOpen(false)}
-            sx={{ borderRadius: 2, mb: 0.5 }}
-          >
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.label} />
-          </ListItemButton>
-        ))}
-      </List>
+      <List sx={{ px: 1, py: 1 }}>{navItems.map((item) => renderNavItem(item))}</List>
     </Box>
   )
 
