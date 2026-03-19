@@ -1,11 +1,10 @@
 import {Link, Paper, Stack, Table, TableContainer, TableHead, TableBody, TableRow, TableCell, Typography} from '@mui/material'
 
-export default function IntegratedPlansLocalNeedsAssessmentPage() {
+export default function LocalEnvironmentSetupPage() {
   return (
     <Paper sx={{ p: 3 }}>
       <Stack spacing={1}>
-        <Typography variant="h4">Integrated Plans and Local Needs Assessment</Typography>
-        <Typography variant="h5">Local Development Environment Setup</Typography>
+        <Typography variant="h4">Integrated Plans - Local Development Environment Setup</Typography>
         <Paper>
           <Typography variant="h6">Prerequisites</Typography>
           <Table sx={{"& td, & th": { border: 0 }}}>
