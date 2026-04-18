@@ -20,6 +20,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import { navItems, type NavItem } from '../navigation/navItems'
 
 const drawerWidth = 280
+const navItemPaddingByLevel = [2, 5, 7]
 
 type OpenSectionState = Record<string, boolean>
 
@@ -81,12 +82,13 @@ export default function AppLayout() {
     const isOpen = openSections[item.label] ?? false
     const isSelected = item.to === location.pathname
     const isParentSelected = !item.to && hasActiveChild(item, location.pathname)
+    const isDeepChild = level >= 2
 
     const commonSx = {
       mb: 0.5,
       mx: 1,
       borderRadius: 2,
-      pl: level === 0 ? 2 : 5,
+      pl: navItemPaddingByLevel[level] ?? navItemPaddingByLevel[navItemPaddingByLevel.length - 1],
       pr: 2,
     }
 
@@ -106,8 +108,11 @@ export default function AppLayout() {
           selected={isSelected || isParentSelected}
           sx={commonSx}
         >
-          <ListItemIcon sx={{ minWidth: 36 }}>{item.icon}</ListItemIcon>
-          <ListItemText primary={item.label} />
+          <ListItemIcon sx={{ minWidth: isDeepChild ? 30 : 36 }}>{item.icon}</ListItemIcon>
+          <ListItemText
+            primary={item.label}
+            primaryTypographyProps={{ fontSize: isDeepChild ? '0.875rem' : undefined }}
+          />
           {isExpandable ? (isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />) : null}
         </ListItemButton>
 

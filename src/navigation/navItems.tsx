@@ -32,4 +32,36 @@ export const navItems: NavItem[] = [
       },
     ],
   },
+  {
+    label: 'BMAD',
+    icon: <FolderOutlinedIcon />,
+    children: [
+      {
+        label: 'About',
+        to: '/bmad/about',
+        icon: <DescriptionOutlinedIcon />,
+      },
+      {
+        label: 'Setup',
+        icon: <DescriptionOutlinedIcon />,
+        children: [
+          {
+            label: 'Installation',
+            to: '/bmad/setup/installation',
+            icon: <DescriptionOutlinedIcon />,
+          },
+          {
+            label: 'Creating a PRD',
+            to: '/bmad/setup/creating-a-prd',
+            icon: <DescriptionOutlinedIcon />,
+          },
+        ],
+      },
+      {
+        label: 'Demo',
+        to: '/bmad/demo',
+        icon: <DescriptionOutlinedIcon />,
+      },
+    ],
+  },
 ]
