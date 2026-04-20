@@ -16,22 +16,22 @@ export const navItems: NavItem[] = [
   { label: 'Home', to: '/', icon: <HomeIcon /> },
   { label: 'About', to: '/about', icon: <InfoIcon /> },
   { label: 'Contact', to: '/contact', icon: <MailIcon /> },
-  {
-    label: 'Integrated Plans',
-    icon: <FolderOutlinedIcon />,
-    children: [
-      {
-        label: 'Local Environment Setup',
-        to: '/ip/setup',
-        icon: <DescriptionOutlinedIcon />,
-      },
-      {
-        label: 'Local Needs Assessment',
-        to: '/ip/lna',
-        icon: <DescriptionOutlinedIcon />,
-      },
-    ],
-  },
+  // {
+  //   label: 'Integrated Plans',
+  //   icon: <FolderOutlinedIcon />,
+  //   children: [
+  //     {
+  //       label: 'Local Environment Setup',
+  //       to: '/ip/setup',
+  //       icon: <DescriptionOutlinedIcon />,
+  //     },
+  //     {
+  //       label: 'Local Needs Assessment',
+  //       to: '/ip/lna',
+  //       icon: <DescriptionOutlinedIcon />,
+  //     },
+  //   ],
+  // },
   {
     label: 'BMAD',
     icon: <FolderOutlinedIcon />,
@@ -42,7 +42,7 @@ export const navItems: NavItem[] = [
         icon: <DescriptionOutlinedIcon />,
       },
       {
-        label: 'Setup',
+        label: 'Demo',
         icon: <DescriptionOutlinedIcon />,
         children: [
           {
@@ -55,13 +55,18 @@ export const navItems: NavItem[] = [
             to: '/bmad/setup/creating-a-prd',
             icon: <DescriptionOutlinedIcon />,
           },
+          {
+            label: 'Architecture Design',
+            to: '/bmad/demo/architecture-design',
+            icon: <DescriptionOutlinedIcon />,
+          },
         ],
       },
-      {
-        label: 'Demo',
-        to: '/bmad/demo',
-        icon: <DescriptionOutlinedIcon />,
-      },
+      // {
+      //   label: 'Demo',
+      //   to: '/bmad/demo',
+      //   icon: <DescriptionOutlinedIcon />,
+      // },
     ],
   },
 ]

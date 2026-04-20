@@ -1,70 +1,36 @@
 import * as React from 'react'
 import { Box, Link, List, ListItemButton, ListItemText, Paper, Stack, Typography } from '@mui/material'
-import step01Image from './prd/step01.png'
-import step02Image from './prd/step02.png'
-import step03Image from './prd/step03.png'
-import step04Image from './prd/step04.png'
-import step05Image from './prd/step05.png'
-import step06Image from './prd/step06.png'
-import step07Image from './prd/step07.png'
 
-type PrdImage = {
+type ArchitectureImage = {
   src: string
   title: string
   description: React.ReactNode
 }
 
-const prdImages: PrdImage[] = [
+const architectureImages: ArchitectureImage[] = [
   {
-    src: step01Image,
-    title: '01. Create the Product Requirements Document',
+    src: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80',
+    title: '01. Start the architecture workflow',
     description: (
       <>
-        The first step in a new project is to create a Product Requirements Document with the
-        "bmad-create-prd" command. See the{' '}
+        Use the BMAD architecture workflow after the PRD has enough detail to guide system structure,
+        technical constraints, and implementation boundaries. See the{' '}
         <Link href="https://docs.bmad-method.org/" target="_blank" rel="noopener noreferrer">
           BMAD Method documentation
         </Link>{' '}
-        for additional guidance.
+        for workflow guidance.
       </>
     ),
   },
   {
-    src: step02Image,
-    title: '02. Describing the project',
-    description: 'The coding assistant is asking for context about the target audience.',
+    src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+    title: '02. Define system boundaries',
+    description: 'Capture the major services, user-facing surfaces, data flows, and integrations.',
   },
   {
-    src: step03Image,
-    title: '03. Describing general functionality',
-    description: 'The coding assistant asked follow-up questions about different user personas and the deployment context',
-  },
-  {
-    src: step04Image,
-    title: '04. Describing business proposal',
-    description: 'The coding assistant asked for business background',
-  },
-  {
-    src: step05Image,
-    title: '05. Created executive summary',
-    description: 'The coding assistant created an executive summary',
-  },
-  {
-    src: step06Image,
-    title: '06. Created user journeys',
-    description: 'The coding assistant created the user journeys for the app',
-  },
-  {
-    src: step07Image,
-    title: '07. Finished creating PRD',
-    description: (
-        <>
-          The coding assistant has finished creating the PRD.  You can inspect{' '}
-          <Link href="https://github.com/dennis-lin-dhcs/bmad-demo/compare/step01-create-prd?expand=1" target="_blank" rel="noopener noreferrer">
-            the changes here.
-          </Link>
-        </>
-    ),
+    src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
+    title: '03. Review implementation guidance',
+    description: 'Use the architecture output to align coding agents on structure, patterns, and constraints.',
   },
 ]
 
@@ -81,7 +47,7 @@ type MagnifierState = {
   imageHeight: number
 }
 
-export default function BmadCreatingPrdPage() {
+export default function BmadArchitectureDesignPage() {
   const [selectedImageIndex, setSelectedImageIndex] = React.useState(0)
   const [magnifier, setMagnifier] = React.useState<MagnifierState>({
     visible: false,
@@ -93,7 +59,7 @@ export default function BmadCreatingPrdPage() {
     imageHeight: 0,
   })
   const imageRef = React.useRef<HTMLImageElement | null>(null)
-  const selectedImage = prdImages[selectedImageIndex]
+  const selectedImage = architectureImages[selectedImageIndex]
   const magnifierBackgroundX = magnifierSize / 2 - magnifier.imageX * magnifierZoom
   const magnifierBackgroundY = magnifierSize / 2 - magnifier.imageY * magnifierZoom
 
@@ -134,9 +100,9 @@ export default function BmadCreatingPrdPage() {
   return (
     <Paper sx={{ p: 3 }}>
       <Stack spacing={1}>
-        <Typography variant="h4">BMAD - Creating a Product Requirements Document</Typography>
+        <Typography variant="h4">BMAD - Architecture Design</Typography>
         <Stack spacing={1.5} sx={{ pt: 2 }}>
-          <Typography variant="h5">Creating a PRD gallery</Typography>
+          <Typography variant="h5">Architecture Design gallery</Typography>
           <Box
             sx={{
               display: 'grid',
@@ -145,7 +111,7 @@ export default function BmadCreatingPrdPage() {
             }}
           >
             <List
-              aria-label="Creating a PRD gallery images"
+              aria-label="Architecture Design gallery images"
               sx={{
                 border: 1,
                 borderColor: 'divider',
@@ -155,7 +121,7 @@ export default function BmadCreatingPrdPage() {
                 p: 0.5,
               }}
             >
-              {prdImages.map((image, index) => (
+              {architectureImages.map((image, index) => (
                 <ListItemButton
                   key={image.title}
                   onClick={() => setSelectedImageIndex(index)}
