@@ -10,6 +10,7 @@ import BmadSetupPage from '../pages/bmad/BmadSetupPage'
 import BmadDemoPage from '../pages/bmad/BmadDemoPage'
 import BmadInstallationPage from '../pages/bmad/BmadInstallationPage'
 import BmadCreatingPrdPage from '../pages/bmad/BmadCreatingPrdPage'
+import BmadArchitectureDesignPage from '../pages/bmad/BmadArchitectureDesignPage'
 
 export default function AppRoutes() {
   return (
@@ -24,6 +25,7 @@ export default function AppRoutes() {
         <Route path="/bmad/setup" element={<BmadSetupPage />} />
         <Route path="/bmad/setup/installation" element={<BmadInstallationPage />} />
         <Route path="/bmad/setup/creating-a-prd" element={<BmadCreatingPrdPage />} />
+        <Route path="/bmad/demo/architecture-design" element={<BmadArchitectureDesignPage />} />
         <Route path="/bmad/demo" element={<BmadDemoPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />

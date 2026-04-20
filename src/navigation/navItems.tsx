@@ -59,8 +59,19 @@ export const navItems: NavItem[] = [
       },
       {
         label: 'Demo',
-        to: '/bmad/demo',
         icon: <DescriptionOutlinedIcon />,
+        children: [
+          {
+            label: 'Architecture Design',
+            to: '/bmad/demo/architecture-design',
+            icon: <DescriptionOutlinedIcon />,
+          },
+          {
+            label: 'BMAD Demo',
+            to: '/bmad/demo',
+            icon: <DescriptionOutlinedIcon />,
+          },
+        ],
       },
     ],
   },
