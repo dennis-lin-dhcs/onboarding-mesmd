@@ -64,6 +64,32 @@ export const navItems: NavItem[] = [
           },
         ],
       },
+      {
+        label: 'Compliance',
+        icon: <DescriptionOutlinedIcon />,
+        children: [
+          {
+            label: 'Governance Model',
+            to: '/bmad/compliance/governance-model',
+            icon: <DescriptionOutlinedIcon />,
+          },
+          {
+            label: 'Change Control',
+            to: '/bmad/compliance/change-control',
+            icon: <DescriptionOutlinedIcon />,
+          },
+          {
+            label: 'Persona and Agent Governance',
+            to: '/bmad/compliance/persona-and-agent-governance',
+            icon: <DescriptionOutlinedIcon />,
+          },
+          {
+            label: 'Traceability and Audit',
+            to: '/bmad/compliance/traceability-and-audit',
+            icon: <DescriptionOutlinedIcon />,
+          },
+        ],
+      },
       // {
       //   label: 'Demo',
       //   icon: <DescriptionOutlinedIcon />,
