@@ -26,6 +26,23 @@ export default function BmadChangeControlPage() {
           <li>Use review status as the shared signal for readiness and unresolved concerns.</li>
           <li>Keep discussion and approvals with the change so the decision history is preserved.</li>
         </Box>
+        <Stack spacing={1}>
+          <Typography variant="h5">Delivery backlog expectations</Typography>
+          <Typography color="text.secondary">
+            The delivery epic should keep BMAD execution grounded in a prioritized backlog, short
+            executive summaries, concrete use cases, and sprint goals focused on risk, cost, and
+            visibility.
+          </Typography>
+          <Box
+            component="ul"
+            sx={{ color: 'text.secondary', fontSize: '0.9rem', lineHeight: 1.7, m: 0, pl: 4 }}
+          >
+            <li>Tag Jira issues with the BMAD workflow, team, use case, and owning workstream.</li>
+            <li>Summarize each workstream in leadership-ready language before sprint review.</li>
+            <li>Prioritize work that reduces risk, controls cost, or improves operational visibility.</li>
+            <li>Link pull requests back to the Jira epic and story that authorized the work.</li>
+          </Box>
+        </Stack>
       </Stack>
     </Paper>
   )
