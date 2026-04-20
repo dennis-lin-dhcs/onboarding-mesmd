@@ -16,6 +16,7 @@ export const navItems: NavItem[] = [
   { label: 'Home', to: '/', icon: <HomeIcon /> },
   { label: 'About', to: '/about', icon: <InfoIcon /> },
   { label: 'Contact', to: '/contact', icon: <MailIcon /> },
+    /*
   {
     label: 'Integrated Plans',
     icon: <FolderOutlinedIcon />,
@@ -32,6 +33,7 @@ export const navItems: NavItem[] = [
       },
     ],
   },
+    //*/
   {
     label: 'BMAD',
     icon: <FolderOutlinedIcon />,
