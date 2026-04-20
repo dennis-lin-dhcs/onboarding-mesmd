@@ -42,7 +42,7 @@ export const navItems: NavItem[] = [
         icon: <DescriptionOutlinedIcon />,
       },
       {
-        label: 'Setup',
+        label: 'Demo',
         icon: <DescriptionOutlinedIcon />,
         children: [
           {
@@ -55,24 +55,29 @@ export const navItems: NavItem[] = [
             to: '/bmad/setup/creating-a-prd',
             icon: <DescriptionOutlinedIcon />,
           },
-        ],
-      },
-      {
-        label: 'Demo',
-        icon: <DescriptionOutlinedIcon />,
-        children: [
           {
             label: 'Architecture Design',
             to: '/bmad/demo/architecture-design',
             icon: <DescriptionOutlinedIcon />,
           },
-          {
-            label: 'BMAD Demo',
-            to: '/bmad/demo',
-            icon: <DescriptionOutlinedIcon />,
-          },
         ],
       },
+      // {
+      //   label: 'Demo',
+      //   icon: <DescriptionOutlinedIcon />,
+      //   children: [
+      //     {
+      //       label: 'Architecture Design',
+      //       to: '/bmad/demo/architecture-design',
+      //       icon: <DescriptionOutlinedIcon />,
+      //     },
+      //     {
+      //       label: 'BMAD Demo',
+      //       to: '/bmad/demo',
+      //       icon: <DescriptionOutlinedIcon />,
+      //     },
+      //   ],
+      // },
     ],
   },
 ]

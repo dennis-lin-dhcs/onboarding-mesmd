@@ -1,5 +1,8 @@
 import * as React from 'react'
 import { Box, Link, List, ListItemButton, ListItemText, Paper, Stack, Typography } from '@mui/material'
+import step01Image from './architecture/step01.png'
+import step02Default from './architecture/step02-default.png'
+import step02FineTuned from './architecture/step02-fine-tuned.png'
 
 type ArchitectureImage = {
   src: string
@@ -9,7 +12,7 @@ type ArchitectureImage = {
 
 const architectureImages: ArchitectureImage[] = [
   {
-    src: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80',
+    src: step01Image,
     title: '01. Start the architecture workflow',
     description: (
       <>
@@ -23,14 +26,22 @@ const architectureImages: ArchitectureImage[] = [
     ),
   },
   {
-    src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
-    title: '02. Define system boundaries',
-    description: 'Capture the major services, user-facing surfaces, data flows, and integrations.',
+    src: step02Default,
+    title: '02. Default behavior',
+    description: 'Notice how this is suggesting the Javascript/Typescript for the front-end, as well as a choice of cloud providers.'
   },
   {
-    src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
-    title: '03. Review implementation guidance',
-    description: 'Use the architecture output to align coding agents on structure, patterns, and constraints.',
+    src: step02FineTuned,
+    title: '03. Fine-tuned behavior',
+    description: (
+        <>
+          The fine-tuned Architect role supported only Typescript and AWS.  Note the change from the previous step ("02. Default Behavior") when
+            this version was run.  You can view{' '}
+            <Link href="https://github.com/dennis-lin-dhcs/bmad-demo/compare/step01-create-prd...step02-create-architecture-fine-tuned?expand=1" target="_blank" rel="noopener noreferrer">
+              the changes here.
+            </Link>
+        </>
+    )
   },
 ]
 
