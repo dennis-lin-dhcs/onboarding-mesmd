@@ -4,6 +4,7 @@ import step01Image from './architecture/step01.png'
 import step02Default from './architecture/step02-default.png'
 import step02FineTuned from './architecture/step02-fine-tuned.png'
 import step04Image from './architecture/step04.png'
+import step05Image from './architecture/step05.png'
 
 type ArchitectureImage = {
   src: string
@@ -46,7 +47,23 @@ const architectureImages: ArchitectureImage[] = [
   },
   {
     src: step04Image,
-    title: '04. Development Guardrail',
+    title: '04. List of tasks (stories in JIRA)',
+    description: (
+      <>
+        As part of the process to generate architecture diagrams, the LLM powering BMAD also generates a list of stories as well.  The stories that
+        were generated as part of this demo can be viewed{' '}
+        <Link href="https://github.com/dennis-lin-dhcs/bmad-demo/compare/step01-create-prd...step02-create-architecture-fine-tuned?expand=1#diff-5e85fc7d73ddac178024558f4f4a6b608ed707a5ae1e5e51d11b8bd26c6c54e4R33" target="_blank" rel="noopener noreferrer">
+          here.
+        </Link>.  This fulfills Epics 1, 2 and 3{' '}
+        <Link href="https://dhcs-mesmd.atlassian.net/wiki/spaces/MA/pages/4502683917/BMAD+Proposed+Epics+and+User+Stories+-+Version+2" target="_blank" rel="noopener noreferrer">
+          of this document.
+        </Link>
+      </>
+    )
+  },
+  {
+    src: step05Image,
+    title: '05. Development Guardrail',
     description: 'Once the architecture documents and technical documents are in, developer guardrails will fall in place.  As shown here, the guardrails confirm that the developer is following the project specs and the decisions made in the architecture documents.',
   },
 ]
