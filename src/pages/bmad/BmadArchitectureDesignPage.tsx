@@ -3,6 +3,7 @@ import { Box, Link, List, ListItemButton, ListItemText, Paper, Stack, Typography
 import step01Image from './architecture/step01.png'
 import step02Default from './architecture/step02-default.png'
 import step02FineTuned from './architecture/step02-fine-tuned.png'
+import step04Image from './architecture/step04.png'
 
 type ArchitectureImage = {
   src: string
@@ -42,6 +43,11 @@ const architectureImages: ArchitectureImage[] = [
             </Link>
         </>
     )
+  },
+  {
+    src: step04Image,
+    title: '04. Development Guardrail',
+    description: 'Once the architecture documents and technical documents are in, developer guardrails will fall in place.  As shown here, the guardrails confirm that the developer is following the project specs and the decisions made in the architecture documents.',
   },
 ]
 

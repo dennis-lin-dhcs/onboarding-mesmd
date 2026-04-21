@@ -40,8 +40,19 @@ export const navItems: NavItem[] = [
     children: [
       {
         label: 'About',
-        to: '/bmad/about',
         icon: <DescriptionOutlinedIcon />,
+        children: [
+          {
+            label: 'Overview',
+            to: '/bmad/about',
+            icon: <DescriptionOutlinedIcon />,
+          },
+          {
+            label: 'Development Flow',
+            to: '/bmad/about/development-flow',
+            icon: <DescriptionOutlinedIcon />,
+          },
+        ],
       },
       {
         label: 'Demo',

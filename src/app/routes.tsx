@@ -6,6 +6,7 @@ import ContactPage from '../pages/ContactPage'
 import LocalEnvironmentSetupPage from "../pages/integrated_plans/LocalEnvironmentSetupPage";
 import LocalNeedsAssessmentPage from "../pages/integrated_plans/LocalNeedsAssessmentPage";
 import BmadAboutPage from '../pages/bmad/BmadAboutPage'
+import BmadDevelopmentFlowPage from '../pages/bmad/BmadDevelopmentFlowPage'
 import BmadSetupPage from '../pages/bmad/BmadSetupPage'
 import BmadDemoPage from '../pages/bmad/BmadDemoPage'
 import BmadInstallationPage from '../pages/bmad/BmadInstallationPage'
@@ -26,6 +27,7 @@ export default function AppRoutes() {
         <Route path="/ip/setup" element={<LocalEnvironmentSetupPage/>} />
         <Route path="/ip/lna" element={<LocalNeedsAssessmentPage />} />
         <Route path="/bmad/about" element={<BmadAboutPage />} />
+        <Route path="/bmad/about/development-flow" element={<BmadDevelopmentFlowPage />} />
         <Route path="/bmad/setup" element={<BmadSetupPage />} />
         <Route path="/bmad/setup/installation" element={<BmadInstallationPage />} />
         <Route path="/bmad/setup/creating-a-prd" element={<BmadCreatingPrdPage />} />
