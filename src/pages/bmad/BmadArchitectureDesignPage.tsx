@@ -64,7 +64,7 @@ const architectureImages: ArchitectureImage[] = [
   {
     src: step05Image,
     title: '05. Development Guardrail',
-    description: 'Once the architecture documents and technical documents are in, developer guardrails will fall in place.  As shown here, the guardrails confirm that the developer is following the project specs and the decisions made in the architecture documents.',
+    description: 'Once the architecture documents and technical documents are in, developer guardrails will fall in place.  As shown here, the guardrails confirm that the developer needs to follow project specs and the decisions made in the architecture documents.',
   },
 ]
 
