@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Box, Paper, Stack, Typography } from '@mui/material'
-import developmentFlowImage from './architecture/step03.png'
+import developmentFlowImage from './flow/development-lifecycle.png'
 
 const magnifierSize = 200
 const magnifierZoom = 2.5
@@ -64,8 +64,8 @@ export default function BmadDevelopmentFlowPage() {
       <Stack spacing={2}>
         <Typography variant="h4">BMAD - Development Flow</Typography>
         <Typography color="text.secondary">
-          This flow shows how BMAD moves from requirements and architecture into guarded
-          implementation. Hover over the image to inspect the flow in more detail.
+          This flow shows the BMAD lifecycle from intake through audit, with the primary personas
+          mapped to each stage. Hover over the image to inspect the flow in more detail.
         </Typography>
         <Stack spacing={1.5}>
           <Typography variant="h5">Development flow diagram</Typography>
@@ -120,8 +120,8 @@ export default function BmadDevelopmentFlowPage() {
             ) : null}
           </Box>
           <Typography color="text.secondary">
-            The flow ties together requirements, architecture, guardrails, implementation, and
-            review so BMAD output remains aligned with project intent.
+            The diagram ties together requirements, architecture, guardrails, implementation,
+            review, and audit while showing which personas own each phase of the process.
           </Typography>
         </Stack>
       </Stack>
